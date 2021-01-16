@@ -6,6 +6,9 @@ rockButton.addEventListener("click", startRound);
 paperButton.addEventListener("click", startRound);
 scissorsButton.addEventListener("click", startRound);
 
+let playerScore = 0;
+let computerScore = 0;
+
 function startRound(e) {
 
     const computerOption = computerPlay();
@@ -15,42 +18,49 @@ function startRound(e) {
     const playerIntro = document.querySelector("#player-selection");
     const computerIntro = document.querySelector("#computer-selection");
 
-    playerIntro.textContent = `Player's selection: ${playerOption.toLowerCase()}`;
-    computerIntro.textContent = `Computer's selection: ${computerOption.toLowerCase()}`;
+    playerIntro.textContent = `Player's selection: ${playerOption}`;
+    computerIntro.textContent = `Computer's selection: ${computerOption}`;
+    let result = null;
 
 
     if (playerOption === computerOption) {
-        alert("Tie");
+        selectionHeading.textContent = "Tie";
     }
     else if (
         ((playerOption === "scissors") && (computerOption === "paper")) ||
         ((playerOption === "paper") && (computerOption === "rock")) ||
         ((playerOption === "rock") && (computerOption === "scissors"))
     ) {
-        alert("Win");
+        selectionHeading.textContent = "Win";
+        result = "win";
     }
     else if (
         ((playerOption === "scissors") && (computerOption === "rock")) ||
         ((playerOption === "rock") && (computerOption === "paper")) ||
         ((playerOption === "paper") && (computerOption === "scissors"))
     ) {
-        alert("Lose");
+        selectionHeading.textContent = "Lose";
+        result = "lose";
     }
     else {
         alert("Error");
     }
 
-    changeScore();
+    const playerScoreIntro = document.querySelector("#player-score");
+    const computerScoreIntro = document.querySelector("#computer-score");
+
+
+    if (result == "win") {
+        playerScore++;
+    }
+    else if (result == "lose") {
+        computerScore++;
+    }
+
+    playerScoreIntro.textContent = `You:  ${playerScore}`;
+    computerScoreIntro.textContent = `Computer: ${computerScore}`;
 
 }
-
-
-function changeScore() {
-
-
-
-}
-
 
 
 

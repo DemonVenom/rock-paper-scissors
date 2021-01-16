@@ -1,6 +1,6 @@
 # Second project from The Odin Project.
 
-## What is this?
+## What is the project?
 
 A simple game that allows users to play rock paper scissors with the computer
 
@@ -11,3 +11,5 @@ edit1: completed JavaScript portion to make the computerPlay function that will 
 edit2: created separate .js and .css files from html file. Connected buttons with .js function. Front-end still not finished. Only plays one round
 
 edit3: added player and computer selections to prove tie/win/loss
+
+edit4: added score counter
