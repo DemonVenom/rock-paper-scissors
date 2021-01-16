@@ -11,44 +11,52 @@ function startRound(e) {
     const computerOption = computerPlay();
     const playerOption = (e.target.id);
 
-    if ((playerOption === "rock") && (computerOption === "rock")) {
+    const selectionHeading = document.querySelector("#selection-heading");
+    const playerIntro = document.querySelector("#player-selection");
+    const computerIntro = document.querySelector("#computer-selection");
+
+    playerIntro.textContent = `Player's selection: ${playerOption.toLowerCase()}`;
+    computerIntro.textContent = `Computer's selection: ${computerOption.toLowerCase()}`;
+
+
+    if (playerOption === computerOption) {
         alert("Tie");
     }
-    else if ((playerOption === "paper") && (computerOption === "paper")) {
-        alert("Tie");
-    }
-    else if ((playerOption === "scissors") && (computerOption === "scissors")) {
-        alert("Tie");
-    }
-    else if ((playerOption === "scissors") && (computerOption === "paper")) {
+    else if (
+        ((playerOption === "scissors") && (computerOption === "paper")) ||
+        ((playerOption === "paper") && (computerOption === "rock")) ||
+        ((playerOption === "rock") && (computerOption === "scissors"))
+    ) {
         alert("Win");
     }
-    else if ((playerOption === "paper") && (computerOption === "rock")) {
-        alert("Win");
-    }
-    else if ((playerOption === "rock") && (computerOption === "scissors")) {
-        alert("Win");
-    }
-    else if ((playerOption === "scissors") && (computerOption === "rock")) {
-        alert("Lose");
-    }
-    else if ((playerOption === "rock") && (computerOption === "paper")) {
-        alert("Lose");
-    }
-    else if ((playerOption === "paper") && (computerOption === "scissors")) {
+    else if (
+        ((playerOption === "scissors") && (computerOption === "rock")) ||
+        ((playerOption === "rock") && (computerOption === "paper")) ||
+        ((playerOption === "paper") && (computerOption === "scissors"))
+    ) {
         alert("Lose");
     }
     else {
         alert("Error");
     }
 
+    changeScore();
+
+}
+
+
+function changeScore() {
+
 
 
 }
 
+
+
+
 function computerPlay() {
 
-    let options = ["rock", "paper", "scissors"];
+    const options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random() * options.length)];
 
 }
