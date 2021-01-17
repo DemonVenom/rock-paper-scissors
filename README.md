@@ -3,6 +3,8 @@
 ## What is the project?
 
 A simple game that allows users to play rock paper scissors with the computer
+Play the Rock Paper Scissors game using the link below:
+https://demonvenom.github.io/rock-paper-scissors/
 
 ## Edit Log
 
@@ -15,3 +17,5 @@ edit3: added player and computer selections to prove tie/win/loss
 edit4: added score counter
 
 edit5: added basic css with completed buttons
+
+edit6: added GitHub Pages demo of game to README file
