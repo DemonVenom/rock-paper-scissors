@@ -13,3 +13,5 @@ edit2: created separate .js and .css files from html file. Connected buttons wit
 edit3: added player and computer selections to prove tie/win/loss
 
 edit4: added score counter
+
+edit5: added basic css with completed buttons
